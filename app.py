@@ -6,11 +6,10 @@ app = Flask(__name__)
 
 # Personal details - UPDATE THESE WITH YOUR INFORMATION
 USER_DETAILS = {
-    "full_name": "john_doe",  # Change to your name in lowercase with underscores
-    "birth_date": "17091999",  # Change to your birth date (ddmmyyyy)
-    "email": "john@xyz.com",  # Change to your email
-    "roll_number": "ABCD123"  # Change to your roll number
-}
+    "full_name": "TRUSHA ANAND",  
+    "birth_date": "220504",  
+    "email": "trushaanand003@gmail.com.com",  
+    "roll_number": "22BCE10550"  
 
 def process_data(data_array):
     """
@@ -278,65 +277,3 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(debug=False, host='0.0.0.0', port=port)
 
-"""
-DEPLOYMENT INSTRUCTIONS:
-
-1. UPDATE USER DETAILS:
-   - Change USER_DETAILS dictionary with your personal information
-   - full_name: your name in lowercase with underscores (e.g., "john_doe")
-   - birth_date: your birth date in ddmmyyyy format (e.g., "17091999")
-   - email: your email address
-   - roll_number: your college roll number
-
-2. CREATE requirements.txt FILE:
-Flask==2.3.3
-gunicorn==21.2.0
-Werkzeug==2.3.7
-
-3. CREATE Procfile FOR DEPLOYMENT:
-web: gunicorn app:app
-
-4. DEPLOYMENT OPTIONS:
-
-   A. RENDER (Recommended):
-      - Create account on render.com
-      - Connect your GitHub repository
-      - Create new Web Service
-      - Build Command: pip install -r requirements.txt
-      - Start Command: gunicorn app:app
-      - Deploy
-
-   B. RAILWAY:
-      - Create account on railway.app
-      - Connect GitHub repository
-      - Deploy automatically
-
-   C. VERCEL:
-      - Install Vercel CLI: npm i -g vercel
-      - Create vercel.json:
-        {
-          "version": 2,
-          "builds": [{"src": "./app.py", "use": "@vercel/python"}],
-          "routes": [{"src": "/(.*)", "dest": "/"}]
-        }
-      - Deploy: vercel --prod
-
-   D. HEROKU:
-      - Install Heroku CLI
-      - heroku create your-app-name
-      - git push heroku main
-
-5. TEST YOUR DEPLOYED API:
-   - POST request to: https://your-url.com/bfhl
-   - Body: {"data": ["a","1","334","4","R","$"]}
-   - Should return status 200 with proper JSON response
-
-6. SUBMIT YOUR API URL:
-   - Format: https://your-deployed-url.com/bfhl
-   - Submit at: https://forms.office.com/r/ZeVpUYp3zV
-
-Example API Usage:
-curl -X POST https://your-api-url.com/bfhl \
-  -H "Content-Type: application/json" \
-  -d '{"data": ["a","1","334","4","R","$"]}'
-"""
